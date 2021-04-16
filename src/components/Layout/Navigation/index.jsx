@@ -128,7 +128,7 @@ class Menus extends React.Component {
                 </Menu.Item>
               )
             }
-            var oul = <SubMenu key={navTabLi.id} title={<span>{navTabLi.iconCls}<span>{navTabLi.text}</span></span>}>{oli}</SubMenu>;
+            var oul = <SubMenu style={{backgroundColor:'#44475c'}} key={navTabLi.id} title={<span>{navTabLi.iconCls}<span>{navTabLi.text}</span></span>}>{oli}</SubMenu>;
             li.push(oul);
           } else {
             li.push(

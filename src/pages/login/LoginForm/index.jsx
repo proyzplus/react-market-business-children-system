@@ -1,14 +1,19 @@
+
 import React, { Component } from 'react';
 import { UserOutlined } from '@ant-design/icons';
 import { Input, message, Button } from 'antd';
 import { login } from '../../../api/login';
 import './index.less';
 
-export default class index extends Component {
+import { connect } from "react-redux";
+import { updateUserInfo } from '../../../redux/actions/userInfo';
+
+class LoginForm extends Component {
   state = {
     user: "",
     pass: "",
     loadings: false,
+    userInfo: {}
   }
   saveUserName = e => {
     this.setState({
@@ -41,6 +46,7 @@ export default class index extends Component {
           this.setState({
             loadings: false
           });
+          this.props.updateUserInfo(res);
           this.$localForage.setItem(this.state.user + 'userInfo', res);
           this.props.user_is_login(true);
         } else {
@@ -73,3 +79,12 @@ export default class index extends Component {
     )
   }
 }
+
+export default connect(
+  state => ({
+    userInfo: state.userInfo,
+  }),
+  {
+    updateUserInfo
+  }
+)(LoginForm)

@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
-import Layout from '../../components/Layout';
 import loginLogo from '../../aseets/image/loginLogo.png';
 import loginKefu from '../../aseets/image/login-kefu.jpg';
 import download from '../../aseets/image/download.png';
@@ -68,7 +66,6 @@ export default class index extends Component {
               </div>
               <div className="tab-bar" onMouseEnter={this.changeState(true, 'service')} onMouseLeave={this.changeState(false, 'service')}>
                 <Tooltip placement="bottom" color="#fff" title={() =>
-                  // eslint-disable-next-line jsx-a11y/alt-text
                   <div><img src={loginKefu} style={{ width: "120px" }} /></div>}>
                   <img src={kefuState ? erweima_click : erweima} alt="" />
                   <p>客 &nbsp;&nbsp; 服</p>
@@ -81,7 +78,6 @@ export default class index extends Component {
         <div className="Copyright">
           <span>Copyright© 2006 - {(new Date()).getFullYear()} 粤ICP备18013531号-1</span>
         </div>
-        <Route path="/home" component={Layout} />
       </div >
     )
   }

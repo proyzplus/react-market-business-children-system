@@ -5,6 +5,7 @@ export const ALLROUTER = [
             "text": "商家首页",
             "state": "closed",
             "iconCls": "",
+            "toPage": "/home",
             "children": [
                   {
                         "id": 1001001,
@@ -24,22 +25,23 @@ export const ALLROUTER = [
                   }
             ]
       },
-      {
-            "id": 1002,
-            "text": "会员管理",
-            "state": "closed",
-            "iconCls": "",
-            "children": [
-                  {
-                        "id": 1002001,
-                        "text": "会员管理",
-                        "checked": false,
-                        "state": "closed",
-                        "iconCls": "",
-                        "url": "/platform/check/month"
-                  }
-            ]
-      },
+      // {
+      //       "id": 1002,
+      //       "text": "会员管理",
+      //       "state": "closed",
+      //       "iconCls": "",
+      //       "toPage": "/memeber",
+      //       "children": [
+      //             {
+      //                   "id": 1002001,
+      //                   "text": "会员管理",
+      //                   "checked": false,
+      //                   "state": "closed",
+      //                   "iconCls": "",
+      //                   "url": "/memeber/memberManager"
+      //             }
+      //       ]
+      // },
       // {
       //       "id": 1003,
       //       "text": "销售报表",

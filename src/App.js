@@ -17,7 +17,7 @@ export default class App extends Component {
     isLogin: false,
     userInfo: {}
   }
-  componentDidMount() {
+  getUserInfo = () => {
     let nowUser = sessionStorage.getItem("nowUser");
     if (nowUser) {
       proxy_localForage.getItem(nowUser + "userInfo").then(res => {
@@ -39,6 +39,9 @@ export default class App extends Component {
         isLogin: false
       });
     }
+  }
+  componentDidMount() {
+    this.getUserInfo();
   }
   user_is_login = (val) => {
     this.setState({
